@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Environment variables
+.env
+
+# Vercel
+.vercel/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+# Uploads
+uploads/ 

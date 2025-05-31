@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/app.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "50mb" }
+    },
+    {
+      "src": "frontend/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/upload_resume/?(.*)", "dest": "backend/app.py" },
+    { "src": "/parsed_resume/?(.*)", "dest": "backend/app.py" },
+    { "src": "/eligible_jobs/?(.*)", "dest": "backend/app.py" },
+    { "src": "/auto_apply/?(.*)", "dest": "backend/app.py" },
+    { "src": "/(.*)", "dest": "/frontend/index.html" }
+  ]
+} 
